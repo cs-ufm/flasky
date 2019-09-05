@@ -1,0 +1,8 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#540D4B",
+        "titleBar.activeBackground": "#761268",
+        "titleBar.activeForeground": "#FEFCFE"
+    },
+    "better-comments.highlightPlainText": true
+}
