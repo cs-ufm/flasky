@@ -1,13 +1,20 @@
+import os
+
 from flask import Flask
+from flask import url_for
 
 app = Flask(__name__)
+app.config.from_pyfile("config.py")
+
+
+var=os.getenv("VAR",None)
 
 @app.route("/")
 def hello():
-    return "Hello, UFM!"
+    logo=url_for('static', filename='ufm_logo.png')
+    print("LOGO:",logo)
+    return f'<img src="{logo}" alt="Girl in a jacket" style="width:400px;height:100px;" > <br><h1> Hello, UFM {var} </h1>'
 
-
-app.config.from_pyfile("config.py")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
